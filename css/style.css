@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header & Nav */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.logo span { color: #00aaff; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover { color: #00aaff; }
+
+.btn-contato {
+    background: #00aaff;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url(../img/img-sala-sofa.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+
+.cta-button {
+    display: inline-block;
+    background: #25d366;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta-button:hover { transform: scale(1.05); background: #128c7e; }
+
+/* Services */
+#servicos { padding: 80px 5%; text-align: center; background: #f9f9f9; }
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.service-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover { transform: translateY(-10px); }
+
+.service-card i { font-size: 3rem; color: #00aaff; margin-bottom: 20px; }
+
+.about-text {
+    margin-left: 20px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Mobile Responsive */
+/* --- Mantenha as regras gerais do arquivo anterior aqui (Reset, Body, etc) --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { line-height: 1.6; color: #333; overflow-x: hidden; }
+
+/* Estilos Base (Desktop) */
+nav { display: flex; justify-content: space-between; padding: 1rem 5%; align-items: center; }
+.nav-links { display: flex; list-style: none; }
+.services-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.hero-content h1 { font-size: 3.5rem; }
+
+/* ============================================================
+   RESPONSIVIDADE (BREAKPOINTS)
+   ============================================================ */
+
+/* 1. Ajuste para Telas Largas (1380px) */
+@media (max-width: 1380px) {
+    nav { padding: 1rem 2%; }
+    .hero-content h1 { font-size: 3rem; }
+    .services-container { gap: 15px; }
+}
+
+/* 2. Ajuste para Desktops Médios e Laptops (1080px) */
+@media (max-width: 1080px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .about-container { 
+        display: flex; 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .about-image { margin-top: 20px; }
+    .about-image img { max-width: 80%; margin: 0 auto; }
+}
+
+/* 3. Ajuste para Tablets (780px) */
+@media (max-width: 780px) {
+    .nav-links {
+        display: none; /* Oculta menu para usar o Menu Toggle via JS */
+    }
+    
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #0056b3;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero { height: 80vh; }
+}
+
+/* 4. Ajuste para Smartphones (378px) */
+@media (max-width: 378px) {
+    .logo { font-size: 1.2rem; }
+    
+    .hero-content h1 { 
+        font-size: 1.8rem; 
+        padding: 0 10px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr; /* 1 coluna em celulares pequenos */
+    }
+
+    .service-card { padding: 20px; }
+
+    .cta-button {
+        width: 90%;
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    .about-text h2 { font-size: 1.5rem; }
+}
+
+/* Estilo auxiliar para o Menu Mobile Ativo (via JS) */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.nav-links.active li { margin: 10px 0; }

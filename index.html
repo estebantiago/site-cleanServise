@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="shortcut icon" href="favicon-floco-neve.png" type="image/x-icon">
     <meta name="google-site-verification" content="tD__DAtbLMQHCl5-yX_3NKPSlnWFMeDvOnjOI0yD5dk" />
-    <meta>
 </head>
 <body>
 
@@ -18,15 +17,15 @@
     <header>
         <nav role="navigation" aria-label="Navegação principal">
             <div class="logo">TH<span> Ar-condicionado</span></div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links" aria-hidden="false">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="https://wa.me/5534984194815" target="_blank" rel="noopener noreferrer" class="btn-contato">Solicitar Orçamento</a></li>
                 <li>Contato: (34) 98419-4815</li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação" aria-expanded="false">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação" aria-controls="nav-links" aria-expanded="false" type="button">
                 <i class="fas fa-bars" aria-hidden="true"></i>
-            </div>
+            </button>
         </nav>
     </header>
 

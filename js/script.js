@@ -1,5 +1,6 @@
 // Efeito de rolagem suave para os links da navegação
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const smoothAnchors = document.querySelectorAll('a[href^="#"]');
+smoothAnchors.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -9,16 +10,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Mensagem de boas-vindas no console (opcional para debug)
-console.log("Site da Zero34 Refrigeração carregado com sucesso!");
+console.log("Site da TH Ar-Condicionado carregado com sucesso!");
 
 // Menu Mobile (Simples toggle)
 const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('nav-links');
 
-if (mobileMenu) {
+if (mobileMenu && navLinks) {
     mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const isExpanded = navLinks.classList.contains('active');
+        const isExpanded = navLinks.classList.toggle('active');
         mobileMenu.setAttribute('aria-expanded', isExpanded);
+        navLinks.setAttribute('aria-hidden', String(!isExpanded));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+                navLinks.setAttribute('aria-hidden', 'true');
+            }
+        });
     });
 }
